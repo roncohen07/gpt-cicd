@@ -1,0 +1,20 @@
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: |
+        # Here you can add commands to build and test your application
+        echo "Building and testing your application..."
