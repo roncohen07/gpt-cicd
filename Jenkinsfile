@@ -19,13 +19,14 @@ pipeline {
         stage('Deploy') {
             when {
                 branch 'main'
-            }
+            }   
             steps {
                 // Add commands to deploy your application
                 // For demonstration, let's assume deploying to a server via SSH
-                sh 'echo "Deploying application"'
-                sh 'ssh sela@146.148.17.73 "cd gpt-cicd && git pull"'
+                sh 'echo "Deploying application..."'
+                sh 'scp index.html sela@146.148.17.73:/var/www/html'
             }
         }
+
     }
 }
